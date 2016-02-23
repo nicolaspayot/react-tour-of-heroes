@@ -9,6 +9,13 @@ module.exports = {
     ],
     loaders: [
       {
+        test: /\.js$/,
+        exclude: /(node_modules|.*\.spec\.js)/,
+        loader: 'isparta-instrumenter'
+      }
+    ],
+    postLoaders: [
+      {
         test: /\.scss$/,
         loaders: [
           'style',
@@ -17,13 +24,6 @@ module.exports = {
           'postcss'
         ]
       },
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|.*\.spec\.js)/,
-        loader: 'isparta-instrumenter'
-      }
-    ],
-    postLoaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
