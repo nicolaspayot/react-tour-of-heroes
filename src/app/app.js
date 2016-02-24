@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Dashboard } from './dashboard/dashboard';
 import { Heroes } from './hero/list/heroes.js';
 import './app.scss';
 
@@ -9,6 +10,7 @@ export class App extends Component {
     return (
       <div>
         <h1>{ this.props.title }</h1>
+        <Dashboard data={HEROES} />
         <Heroes data={HEROES} />
       </div>
     );
