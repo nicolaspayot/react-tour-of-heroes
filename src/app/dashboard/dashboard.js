@@ -7,7 +7,7 @@ export class Dashboard extends Component {
     const topHeroNodes = topHeroes.map(hero => {
       return (
         <div className="col-1-4" key={hero.id}>
-          <div className="module hero">
+          <div className="module">
             <h4>{hero.name}</h4>
           </div>
         </div>
