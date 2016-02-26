@@ -18,16 +18,16 @@
     height: 1.6em;
     border-radius: 4px;
 
-    .selected {
-      &:hover {
-        color: white;
-      }
-    }
-
     &:hover {
       color: #607D8B;
       background-color: #EEE;
       left: .1em;
+    }
+  }
+
+  li.selected {
+    &:hover {
+      color: white;
     }
   }
 
@@ -49,5 +49,18 @@
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0px 0px 4px;
+  }
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+
+  &:hover {
+    background-color: #cfd8dc;
   }
 }
