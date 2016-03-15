@@ -1,10 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Router, Route, hashHistory } from 'react-router';
 import { App } from './app/app';
 
 import './index.scss';
 
-ReactDOM.render(
-  <App title="Tour of Heroes" />,
-  document.getElementById('root')
-);
+render((
+  <Router history={hashHistory}>
+    <Route path="/" component={App}/>
+  </Router>
+), document.getElementById('root'))
