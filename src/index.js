@@ -1,12 +1,18 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import { App } from './app/app';
+import { Dashboard } from './app/dashboard/dashboard';
+import { Heroes } from './app/hero/list/heroes';
 
 import './index.scss';
 
 render((
   <Router history={hashHistory}>
-    <Route path="/" component={App}/>
+    <Route path="/" component={App}>
+      <IndexRoute component={Dashboard}/>
+      <Route path="/dashboard" component={Dashboard}/>
+      <Route path="/heroes" component={Heroes}/>
+    </Route>
   </Router>
 ), document.getElementById('root'))

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './heroes.scss';
 
 export class Heroes extends Component {
