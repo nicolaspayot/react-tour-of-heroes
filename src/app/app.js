@@ -1,20 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { hero } from './hero/hero';
 
 import './app.scss';
 
-import { HEROES } from './mock-heroes';
-
 export class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { heroes: [] };
+  }
+
+  componentDidMount() {
+    hero.query().then(data => this.setState({ heroes: data }));
+  }
+
   render() {
     return (
       <div>
-        <h1>Tour of heroes</h1>
-        <div class="nav">
+        <h1>Tour of Heroes</h1>
+        <nav>
           <Link to="/dashboard" activeClassName="active">Dashboard</Link>
           <Link to="/heroes" activeClassName="active">Heroes</Link>
-        </div>
-        {React.cloneElement(this.props.children, { data: HEROES })}
+        </nav>
+        {React.cloneElement(this.props.children, { data: this.state.heroes })}
       </div>
     );
   }

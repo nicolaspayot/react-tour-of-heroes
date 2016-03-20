@@ -8,11 +8,10 @@ h2 {
   margin-top: 0;
   padding-top: 0;
 }
-a {
+nav a {
   padding: 5px 10px;
   text-decoration: none;
   margin-top: 10px;
-  margin-bottom:20px;
   margin-right:5px;
   display: inline-block;
   background-color: #eee;
@@ -29,5 +28,18 @@ a {
 
   &.active {
     color: #039be5;
+  }
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+
+  &:hover {
+    background-color: #cfd8dc;
   }
 }

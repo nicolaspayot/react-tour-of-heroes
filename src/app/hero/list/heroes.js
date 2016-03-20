@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { hashHistory } from 'react-router';
 
 import './heroes.scss';
 
@@ -11,6 +12,11 @@ export class Heroes extends Component {
 
   onSelect(selectedHero) {
     this.setState({ selectedHero });
+  }
+
+  gotoDetail() {
+    const heroId = this.state.selectedHero.id;
+    hashHistory.push(`/heroes/${heroId}`);
   }
 
   render() {
@@ -31,13 +37,14 @@ export class Heroes extends Component {
       selectedHeroNode = (
         <div>
           <h2>{this.state.selectedHero.name.toUpperCase()} is my hero</h2>
-          <button>View Details</button>
+          <button onClick={() => this.gotoDetail()}>View Details</button>
         </div>
       );
     }
 
+    const style = { marginTop: '20px' };
     return (
-      <div>
+      <div style={style}>
         <h2>My heroes</h2>
         <ul className="heroes">
           {heroNodes}
