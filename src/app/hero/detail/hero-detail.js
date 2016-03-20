@@ -16,6 +16,12 @@ export class HeroDetail extends Component {
     hero.get(heroId).then(data => this.setState({ hero: data }));
   }
 
+  updateHeroName(event) {
+    const _hero = this.state.hero;
+    _hero.name = event.target.value;
+    this.setState({ hero: _hero });
+  }
+
   render() {
     const _hero = this.state.hero;
     const style = { marginTop: '20px' };
@@ -27,7 +33,11 @@ export class HeroDetail extends Component {
           <div><label>id: </label>{_hero.id}</div>
           <div>
             <label>name: </label>
-            <div><input placeholder="name" value={_hero.name}/></div>
+            <div>
+              <input placeholder="name"
+                value={_hero.name}
+                onChange={this.updateHeroName.bind(this)}/>
+            </div>
           </div>
           <button onClick={() => hashHistory.goBack()}>Back</button>
         </div>
